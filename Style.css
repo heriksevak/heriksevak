@@ -113,7 +113,7 @@ button{
     font-size: 17px;
     border-radius: 10px;
     cursor: pointer;
-    box-shadow: 1px 1px 1px 0px black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     position: relative;
     transition: all 0.5s;
     /* font-weight: 500; */
@@ -125,6 +125,8 @@ button:hover{
     border: solid 3px #4e45d5;
     background-color: rgb(231, 231, 231);
     color: black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 
 
@@ -140,11 +142,13 @@ button:hover{
     position: relative;
     z-index: 99;
     overflow: hidden;
+    animation: grow 2s;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 
 .banner-img img{
     width: 100%;
-    
 }
 
 .banner-top::before{
@@ -180,6 +184,7 @@ button:hover{
     width: 200vw;
     border: 20px solid #4e45d5;
     border-radius: 310px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background: #fff;
 }
 
@@ -271,6 +276,8 @@ button:hover{
 
 .about-img img{
     width: 100%;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .about-info h2{
@@ -324,6 +331,8 @@ button:hover{
     border-radius: 50%;
     font-size: 12px;
     float: left;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 
 .about-info .about-work h4{
@@ -495,3 +504,32 @@ margin-bottom: 20px;
 .footer-right{
     text-align: right;
 }
+
+  @keyframes grow {
+      0% { transform: translateX(500px);
+        opacity: 0;
+     }
+    100% { transform: translateX(0);
+        opacity: 1;
+     }
+  }
+  @keyframes spin {
+    to {
+      transform: rotateY(5turn);
+    }
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: scroll()) {
+      .stars {
+        animation: spin linear both;
+        animation-timeline: scroll();
+
+      } 
+    }
+  }
+
+  .stars{
+    width: 35px;
+    display: inline-block;
+  }
