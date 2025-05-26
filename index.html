@@ -398,7 +398,7 @@ if (!name || !email || !subject || !message) {
     return;
 }
     const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${message}`;
-    const mailtoLink = `mailto:heriksevak@example.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    const mailtoLink = `mailto:heriksevak@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
     window.location.href = mailtoLink;
 }
 
